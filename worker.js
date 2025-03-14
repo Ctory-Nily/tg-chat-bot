@@ -5,10 +5,10 @@ const ADMIN_UID = ENV_ADMIN_UID // your user id, get it from https://t.me/userna
 
 const NOTIFY_INTERVAL = 3600 * 1000;
 const fraudDb = 'https://raw.githubusercontent.com/LloydAsp/nfd/main/data/fraud.db';
-const notificationUrl = 'https://raw.githubusercontent.com/LloydAsp/nfd/main/data/notification.txt'
-const startMsgUrl = 'https://raw.githubusercontent.com/LloydAsp/nfd/main/data/startMessage.md';
+const notificationUrl = 'https://raw.githubusercontent.com/Ctory-Nily/tg-chat-bot/main/data/notification.txt'
+const startMsgUrl = 'https://raw.githubusercontent.com/Ctory-Nily/tg-chat-bot/main/data/startMessage.md';
 
-const enable_notification = true
+const enable_notification = false
 /**
  * Return url to telegram api, optionally with parameters added
  */
