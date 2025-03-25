@@ -100,9 +100,32 @@ async function onMessage (message) {
     let startMsg = await fetch(startMsgUrl).then(r => r.text())
     return sendMessage({
       chat_id:message.chat.id,
-      text:startMsg,
+      text:`@${message.chat.username.toString()} ` + startMsg,
+      parse_mode: "HTML"
     })
   }
+
+  if(message.text === '/nowtime'){
+    const now = new Date();
+    
+    // 北京时间（UTC+8）
+    const chinaOffset = 8 * 60 * 60 * 1000; // 8小时的毫秒数
+    const chinaTime = new Date(now.getTime() + chinaOffset);
+    
+    // 提取年、月、日、时、分、秒
+    const year = chinaTime.getUTCFullYear();
+    const month = String(chinaTime.getUTCMonth() + 1).padStart(2, '0');
+    const day = String(chinaTime.getUTCDate()).padStart(2, '0');
+    const hours = String(chinaTime.getUTCHours()).padStart(2, '0');
+    const minutes = String(chinaTime.getUTCMinutes()).padStart(2, '0');
+    const seconds = String(chinaTime.getUTCSeconds()).padStart(2, '0');
+
+    return sendMessage({
+      chat_id:message.chat.id,
+      text:`${year}年${month}月${day}日 ${hours}:${minutes}:${seconds}`,
+    })
+  }
+
   if(message.chat.id.toString() === ADMIN_UID){
     if(!message?.reply_to_message?.chat){
       return sendMessage({
