@@ -2,3 +2,9 @@
 name = 'mimi-chat'
 main = "worker.js"  # 指定入口文件
 compatibility_date = "2025-03-27"
+
+[observability.logs]
+enabled = true
+
+
+
