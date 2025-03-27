@@ -122,7 +122,7 @@ async function onMessage (message) {
 
     return sendMessage({
       chat_id:message.chat.id,
-      text:`${year}年${month}月${day}日 ${hours}:${minutes}:${seconds}sss`,
+      text:`${year}年${month}月${day}日 ${hours}:${minutes}:${seconds}`,
     })
   }
 
