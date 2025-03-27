@@ -3,8 +3,10 @@ name = 'mimi-chat'
 main = "worker.js"  # 指定入口文件
 compatibility_date = "2025-03-27"
 
+kv_namespaces = [
+  { binding = "nfd", id = "12855018e806494f909100ce218aa9c7" }
+]
+
 [observability.logs]
 enabled = true
-
-
 
